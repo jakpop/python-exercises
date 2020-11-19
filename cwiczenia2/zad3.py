@@ -26,7 +26,7 @@ def average(fileRead, fileWrite):
             sum_avg = 0
             counter_avg = 0
         elif current_row[0:3] == next_row[0:3] and j == len(rows):
-            csv.writer(file2).writerow([current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg)])
+            csv.writer(file2).writerow(current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg))
 
         j += 1
 
