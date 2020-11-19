@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 
 def average(fileRead, fileWrite):
@@ -22,16 +23,21 @@ def average(fileRead, fileWrite):
         counter_avg += 1
 
         if current_row[0:3] != next_row[0:3]:
-            csv.writer(file2).writerow(current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg))
+            csv.writer(file2).writerow([current_row[:3]] + [current_row[7:11]] + ['{0:.2f}'.format(sum_avg / counter_avg)])
             sum_avg = 0
             counter_avg = 0
         elif current_row[0:3] == next_row[0:3] and j == len(rows):
-            csv.writer(file2).writerow(current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg))
+            csv.writer(file2).writerow([current_row[:3]] + [current_row[7:11]] + ['{0:.2f}'.format(sum_avg / counter_avg)])
 
         j += 1
 
     file1.close()
     file2.close()
+
+
+# def writeIntoCSV(fileName):
+#     csv.writer(fileName).writerow(
+#         current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg))
 
 
 average('APC Historical Data.csv', "apc_wyniki.csv")
