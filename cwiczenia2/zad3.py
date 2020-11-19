@@ -1,5 +1,4 @@
 import csv
-import pandas as pd
 
 
 def average(fileRead, fileWrite):
