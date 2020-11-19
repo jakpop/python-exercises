@@ -35,9 +35,4 @@ def average(fileRead, fileWrite):
     file2.close()
 
 
-# def writeIntoCSV(fileName):
-#     csv.writer(fileName).writerow(
-#         current_row[:3] + " " + current_row[7:11] + " : " + '{0:.2f}'.format(sum_avg / counter_avg))
-
-
 average('APC Historical Data.csv', "apc_wyniki.csv")
